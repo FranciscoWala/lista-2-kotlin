@@ -1,5 +1,4 @@
 package model
 
-class pessoa {
-
+class Pessoa {
 }
