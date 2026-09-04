@@ -1,10 +1,9 @@
 package model
 
-import kotlin.math.max
+class Produto (var produto : String ,var preco : Double) {
 
-class Produtos (var produto : String, var preco : Int) {
-
-    val produtos = listOf(produto, preco)
+//    var produto : String = ""
+//    var preco : Double = 0.0
 
 
 //    val numbers = listOf (12, 22)

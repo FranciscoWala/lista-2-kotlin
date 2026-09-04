@@ -1,16 +1,8 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import model.Pessoa
+import model.Produto
+
+
 fun main() {
-
-    /*
-    Exercício 12
-    Escreva um programa que conte de 1 a 100 e:
-        ● Se for múltiplo de 3, mostre “Batata”
-        ● Se for múltiplo de 5, mostre “Quente”
-        ● Se for múltiplo de 3 e 5, mostre “BatataQuente”
-    */
-
-
     //Ex 12
 //    batataQuente()
     //Ex13
@@ -25,7 +17,12 @@ fun main() {
     //Ex16
 //    fatorial()
 
-//    Ex 17
+    //Ex 17
+//    pessoal()
+    trabalharComProdutos()
+
+    //Ex 18
+
 
 }
 
@@ -85,4 +82,38 @@ fun fatorial (){
         totalFatorial *= i
     }
         println(totalFatorial)
+}
+
+fun pessoal () {
+
+//    val frase = Pessoa("Maria", 26, "São Paulo" )
+    val pessoa = Pessoa("Francisco", 24, "Barueri")
+    pessoa.apresentarse()
+}
+
+fun trabalharComProdutos () {
+
+    var listaDeProdutos = arrayOf(Produto("Teclado", 100.00), Produto("Mouse", 1200.00))
+
+//    listaDeProdutos[0].produto = "Teclado"
+//    listaDeProdutos[0].preco = 1000.00
+//
+//    listaDeProdutos[1].produto = "Computador"
+//    listaDeProdutos[1].preco = 1500.00
+//
+//    listaDeProdutos[2].produto = "Mouse"
+//    listaDeProdutos[2].preco = 10.00
+
+    var itemMaisCaro = listaDeProdutos[0]
+
+    for (produto in listaDeProdutos){
+
+        if (produto.preco > itemMaisCaro.preco){
+
+            itemMaisCaro = produto
+
+        }
+    }
+    println(itemMaisCaro)
+
 }
