@@ -1,3 +1,4 @@
+import model.ContaBancaria
 import model.Pessoa
 import model.Produto
 
@@ -5,6 +6,7 @@ import model.Produto
 fun main() {
     //Ex 12
 //    batataQuente()
+
     //Ex13
 //    numeroImpar()
 
@@ -19,10 +21,12 @@ fun main() {
 
     //Ex 17
 //    pessoal()
-    trabalharComProdutos()
 
     //Ex 18
+//    trabalharComProdutos()
 
+    // Ex 18
+//    contaBancaria()
 
 }
 
@@ -93,7 +97,11 @@ fun pessoal () {
 
 fun trabalharComProdutos () {
 
-    var listaDeProdutos = arrayOf(Produto("Teclado", 100.00), Produto("Mouse", 1200.00))
+    var listaDeProdutos = arrayOf(
+        Produto("Teclado", 100.00),
+        Produto("Mouse", 1200.00),
+        Produto("Monitor", 1_599_000.00),
+        Produto("MacStudio", 200_000.00))
 
 //    listaDeProdutos[0].produto = "Teclado"
 //    listaDeProdutos[0].preco = 1000.00
@@ -114,6 +122,24 @@ fun trabalharComProdutos () {
 
         }
     }
-    println(itemMaisCaro)
+    println(itemMaisCaro.produto)
+
+}
+
+fun contaBancaria () {
+
+    var contaBancaria = ContaBancaria()
+
+    contaBancaria.nomeTitular = "MARIA DA SILVA"
+
+    contaBancaria.depositarValor(200.00)
+
+    contaBancaria.sacarValor(50.00)
+
+    val extrato = contaBancaria.consultarValor()
+
+    println("O extrato de : \n" +
+            "${contaBancaria.nomeTitular} é \n" +
+            "R$$extrato reais")
 
 }
