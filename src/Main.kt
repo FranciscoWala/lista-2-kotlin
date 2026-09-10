@@ -1,4 +1,6 @@
 import model.ContaBancaria
+import model.Funcionario
+import model.Gerente
 import model.Pessoa
 import model.Produto
 
@@ -25,9 +27,29 @@ fun main() {
     //Ex 18
 //    trabalharComProdutos()
 
-    // Ex 18
+    // Ex 19
 //    contaBancaria()
 
+    // Ex 20
+//      Crie uma classe “Funcionário” com “nome”, “salario” e uma função que retorne o
+//      salário, depois crie uma classe “Gerente” que herde “Funcionario” e sobrescreva a
+//      função que retorna o salário, retornando o salário com 20% de comissão (aumento)
+
+    var funcionario = Funcionario()
+    funcionario.nomeFuncionario = "Francisco"
+    funcionario.salario = 2000.0
+
+    val gerente = Gerente()
+    gerente.nomeFuncionario = "Joao"
+    gerente.salario = 3000.0
+
+    println("""
+            funcionario: ${funcionario.nomeFuncionario}
+            salario: ${funcionario.mostrarSalario()}
+            
+            gerente: ${gerente.nomeFuncionario}
+            salario: ${gerente.mostrarSalario()}
+    """.trimIndent())
 }
 
 fun batataQuente () {
@@ -38,24 +60,30 @@ fun batataQuente () {
 
         if (numero % 5 == 0 && numero % 3 == 0){
             println("batataquente com numero $numero")
-        } else {
-            if (numero % 3 == 0) {
+        } else if (numero % 3 == 0) {
                 println("batata com numero $numero")
-            }
-            if (numero % 5 == 0 ){
+        } else if (numero % 5 == 0 ){
                 println("quente com numero $numero")
-            }
+        } else {
+            println(numero)
         }
+
     }
 
 }
 
 fun numeroImpar (){
 
-    val numeros = 1..100
+//    val numerosFrancisco = 1..100
+//
+//    println(numerosFrancisco.filter{it % 2 == 1})
 
-    println(numeros.filter{it % 2 == 1})
+    //Outra maneira
 
+    val numerosHenry = listOf(1,2,3,4,5,6,7,8,9,10)
+    val impares = numerosHenry.filter{it % 2 != 0}
+
+    println(impares)
 }
 
 fun totalCompras () {
@@ -75,6 +103,13 @@ fun mediaCompras(){
 //    valoresCompras.size
     val media = valoresCompras.reduce{ acumulador, numero -> acumulador + numero }/valoresCompras.size
     println("Média das compras: $media")
+
+//    val idades = listOf(12,18,20,24)
+//
+//    val maioresIdade = idades.filter {it >=  18}
+//
+//    val media = maioresIdade.average()
+//    println(media)
 
 }
 
@@ -138,7 +173,7 @@ fun contaBancaria () {
 
     val extrato = contaBancaria.consultarValor()
 
-    println("O extrato de : \n" +
+    println("Extrato de : \n" +
             "${contaBancaria.nomeTitular} é \n" +
             "R$$extrato reais")
 

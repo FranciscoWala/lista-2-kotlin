@@ -14,6 +14,7 @@ open class ContaBancaria {
     }
 
     fun sacarValor (valorRetirado : Double) {
+        var result : Double = 0.0
 
         saldo -= valorRetirado
 
